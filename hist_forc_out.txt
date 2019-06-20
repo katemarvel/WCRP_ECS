@@ -1,0 +1,51 @@
+Other WMGHG baseline: 0.08130000000000001
+Other WMGHG recent: 1.1208125
+Other WMGHG uncs_pos: 0.11470659261048054
+Other WMGHG uncs_neg: 0.12678097078000483
+devscaled.shape (100000,)
+O3 (T) baseline: 0.06050000000000001
+O3 (T) recent: 0.403
+O3 (T) uncs_pos: 0.30487804878048774
+O3 (T) uncs_neg: 0.3048780487804878
+devscaled.shape (100000,)
+O3(S) baseline: 0.0
+O3(S) recent: -0.05
+O3(S) uncs_pos: -1.2195121951219512
+O3(S) uncs_neg: -1.219512195121951
+devscaled.shape (100000,)
+total aerosol ERF baseline: -0.21450000000000005
+total aerosol ERF recent: -0.8923125
+total aerosol ERF uncs_pos: -0.5420054200542006
+total aerosol ERF uncs_neg: -0.6775067750677506
+devscaled.shape (100000,)
+ERF LUC baseline: -0.04800000000000001
+ERF LUC recent: -0.15275
+ERF LUC uncs_pos: -0.4065040650406504
+ERF LUC uncs_neg: -0.4065040650406505
+devscaled.shape (100000,)
+Vapour baseline: 0.010000000000000002
+Vapour recent: 0.07243750000000002
+Vapour uncs_pos: 0.7621951219512195
+Vapour uncs_neg: 0.30487804878048785
+devscaled.shape (100000,)
+BC snow baseline: 0.020000000000000004
+BC snow recent: 0.04
+BC snow uncs_pos: 0.43554006968641107
+BC snow uncs_neg: 0.4355400696864112
+devscaled.shape (100000,)
+contrails baseline: 0.0
+contrails recent: 0.044375
+contrails uncs_pos: 1.219512195121951
+contrails uncs_neg: 0.36585365853658536
+devscaled.shape (100000,)
+Solar baseline: -0.014000000000000002
+Solar recent: 0.01175
+Solar uncs_pos: 0.6097560975609756
+Solar uncs_neg: 0.6097560975609756
+devscaled.shape (100000,)
+Volcanic baseline: -0.08050000000000002
+Volcanic recent: -0.16275
+Volcanic uncs_pos: -0.18292682926829273
+Volcanic uncs_neg: -0.18292682926829273
+devscaled.shape (100000,)
+CO2_hist: 1.5939999999999999
