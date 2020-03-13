@@ -1,0 +1,4 @@
+Method	tas	xax	had4
+Difference	0.22	0.28	0.50
+One-box	0.22	0.36	0.53
+Trend	0.11	0.31	0.36

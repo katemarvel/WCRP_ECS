@@ -1,0 +1,4 @@
+EBM_method	all_tasfrac	all_hadfrac	joint_tasfrac	joint_hadfrac
+Difference	0.948	1.222	0.960	1.227
+One-box	0.920	1.131	0.941	1.149
+Trend	1.201	1.380	1.200	1.380

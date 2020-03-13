@@ -1,0 +1,46 @@
+Author: Mark Richardson ( markr@jpl.nasa.gov)
+Copyright (c) 2016, California Institute of Technology, government sponsorship
+acknowledged
+
+Contains code, data, figures.
+
+code:
+	Contains richardson16tcr.py, richardson16_module.py
+	
+	All output data and figures can be generated from the command line by
+	navigating to the code directory and then entering:
+	$ python richardson16tcr.py
+	
+	richardson16tcr_module.py contains functions which are called by the
+	richardson16tcr.py script to generate these results.
+	
+	REQUIREMENT: Produced and tested using Python 2.7.6. Designed for 
+				 Python 2.6.x or 2.7.x. Module dependencies are listed in
+				 richardson16tcr.py. 
+				 
+				 Python is a free programming language.  Information on how to 
+				 download and use scientific Python is available at: 
+				 http://www.scipy.org
+
+data:
+	Contains all input data along with calculated results. In this version the
+	blended and blended-masked temperature series are taken as an input, code
+	for blending-masking is ncblendhadcrut.py and ncblendmask.py from Kevin
+	Cowtan's paper ( http://dx.doi.org/10.1002/2015GL064888 ) with a minor
+	modification to the masking for the 1pctCO2 simulations as described
+	in Supplementary Information Section 6. 
+	
+	CMIP5 data were taken from the CMIP5 repository accessible via, for example,
+	http://cmip-pcmdi.llnl.gov/cmip5/data_getting_started.html . CDO was used
+	to perform regridding, stitching together of files or to produce the 
+	piControl time series, and is available from: 
+	https://code.zmaw.de/projects/cdo 
+	
+	Further description of CDO and how it is employed in these calculations is
+	available in the README for Kevin Cowtan's blending-masking code.
+	
+	README_data contains more detailed information on each output file.
+
+figures:
+	Contains .pdf versions of each figure that is produced by richardson16tcr.py
+	through calls to functions in richardson16tcr_module.py 

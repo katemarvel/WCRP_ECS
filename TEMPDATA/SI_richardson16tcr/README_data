@@ -1,0 +1,199 @@
+Author: Mark Richardson ( markr@jpl.nasa.gov )
+Copyright (c) 2016, California Institute of Technology, government sponsorship
+acknowledged
+
+This README provides more details on the data directory for the supplementary
+information of "Reconciling climate response estimates from climate models and
+Earth’s energy budget". For general comments, see other README.
+
+
+Directories are:
+
+1) 1pctCO2			::  1pctCO2 simulations temperature time series
+2) forcing			::  Radiative forcing time series
+3) hist_rcp85		::  stitched historical-RCP8.5 temperature time series
+4) observations		::  observational time series
+5) results			::  values reported and tables used in paper
+6) TCR				::  calculated TCR values
+7) piControl		::  contains time series of CMIP5 preindustrial control 
+						simulations  
+
+--------------------------------------------------------------------------------
+0) data directory
+--------------------------------------------------------------------------------
+
+As well as the above directories, the followinf data files are located
+directly in the data directory:
+
+tas-ensmean-5x5.nc - CMIP5 ensemble mean time series for global air temperature
+					 on HadCRUT4 5x5 degree lat-lon grid
+blend-xax-ensmean-5x5.nc - CMIP5 ensemble mean time series for global blended
+						   air-water temperature using HadCRUT4 anomaly method
+						   on HadCRUT4 5x5 degree lat-lon grid
+CRU.nc - gridded time series of HadCRUT4 land temperature anomalies
+SST.nc - gridded time series of HadSST3 ocean temperature anomalies
+
+--------------------------------------------------------------------------------
+1) 1pctCO2
+--------------------------------------------------------------------------------
+
+Contains folders Txax and Had4, definding blending method. Each file contains
+4 columns: time, air temperature anomaly, blended anomaly, air temperature 
+minus blended anomaly.
+
+Air-temperature anomaly (K) is the second column of files in Txax
+Blended anomaly (K) is the third column of files in Txax
+Blended-masked anomaly (K) is the third column of files in Had4
+
+--------------------------------------------------------------------------------
+2) forcing
+--------------------------------------------------------------------------------
+
+Contains forcing series based on Otto et al. and Forster et al.
+
+otto.txt - time series of forcing from Otto et al., columns are year and forcing
+		   in W m-2
+forster85.txt - time series of ensemble-mean forcing for CMIP5, columns as otto
+allmodels.txt - time series of forcings for individual models, model is 
+				identified by entry in header
+dF2xCO.txt - samples from 2xCO2 forcing distribution by Lewis & Curry code
+dF.dat - samples from forcing distribution output by Lewis & Curry code
+
+--------------------------------------------------------------------------------
+3) hist_rcp85
+--------------------------------------------------------------------------------
+
+Contains folders Txax and Had4, definding blending method. Each file contains
+4 columns: time, air temperature anomaly, blended anomaly, air temperature 
+minus blended anomaly.
+
+Air-temperature anomaly (K) is the second column of files in Txax
+Blended anomaly (K) is the third column of files in Txax
+
+--------------------------------------------------------------------------------
+4) observations
+--------------------------------------------------------------------------------
+
+Contains BEST.txt, annual averages calculated from monthly series: 
+http://berkeleyearth.lbl.gov/auto/Global/Land_and_Ocean_complete.txt )
+
+HadCRUT4.txt, annual averages calculated from monthly series:
+http://www.cru.uea.ac.uk/cru/data/temperature/HadCRUT4-gl.dat
+
+CW14.txt, annual averages for Cowtan & Way (2014) from:
+http://www-users.york.ac.uk/~kdc3/papers/coverage2013/had4_krig_v2_0_0.txt
+
+--------------------------------------------------------------------------------
+5) results
+--------------------------------------------------------------------------------
+
+Value labels and units are displayed in the Supplementary Information. This
+contains:
+
+decadal_TCR_PDFs.txt
+	Data for Supplementary Table 1
+EBM_bias.txt
+	Data for Supplementary Table 2
+ensemble_TCR_pctile.txt
+	Data for Supplementary Table 3
+ensemble_TCR_pctile_r1i1p1.txt
+	Data for Supplementary Table 4
+EBMhist_corrections.txt
+	Data for Supplementary Table 5
+diff_tsens_table.txt
+	Data for Supplementary Table 6
+tas_bm_ratio.txt
+	Data for Supplementary Table 7
+zonal_mask_Tbias.txt
+	Data for Supplementary Table 8
+CMIP5_natvar.txt
+	Data for Supplementary Table 9
+1pctCO2_sims.txt
+	Data for Supplementary Table 10
+T_F_sensitivity_trend.txt
+	Data for Supplementary Table 12
+T_F_sensitivity_sample.txt
+	Data for Supplementary Table 13
+
+NOTE: Supplementary Table 11 is built by combining other tables so is not 
+produced separately. 
+
+--------------------------------------------------------------------------------
+6) TCR
+--------------------------------------------------------------------------------
+
+Contains folders:
+6.1) all			:: TCRs calculated for all models, observations, for each 
+					   scenario and method of calculating TCR
+6.2) diff_tsens		:: TCRs for different baseline and analysis periods in the 
+					   Otto et al. difference calculation applied to models
+6.3) tsensitivity	:: Time sensitivity of calculated TCR for each scenario and
+					   energy budget method, determined by changing end year
+					   of calculation
+
+And file:
+IPCC_TCR.txt		:: List of TCRs for CMIP5 models taken from IPCC AR5 WG1
+					   Table 9.5.
+
+	----------------------------------------------------------------------------
+	6.1) all
+	----------------------------------------------------------------------------
+	
+	Other than trueTCR.txt, which is the estimate of the canonical TCR, format 
+	for filenames is:
+	<modelscenario>_<method>.txt
+		
+	<modelscenario>:
+		1pct = 1pctCO2 scenario
+		allhist = historical-RCP8.5 scenario, 3 observational datasets and 
+				  all models
+	
+	<method>:
+		diffTCR = difference method from Otto et al. In 1pctCO2, baseline of 
+				  year 0 and reference period of years 65-74. In historical,
+				  baseline of years 1861--1879, reference of 2000--2009.
+		oneboxTCR = one-box method from Held et al. In 1pctCO2, start year of 0
+					and end year of 70. In historical, start year of 1861 and 	
+					end year of 2010. 
+		trend TCR = trend method from Bengtsson & Schwartz, start year of 1970
+					and end year of 2010.
+	
+	File format:
+		Column1 = name of simulation or observational dataset
+		Column2 = TCR calculated using air temperature only
+		Column3 = TCR calculated using blended global temperatures
+		Column4 = TCR calculated using blended-masked global temperatures with
+				  HadCRUT4-based mask
+
+	----------------------------------------------------------------------------
+	6.2) diff_tsens
+	----------------------------------------------------------------------------
+	
+	Format for filenames:
+	diffTCR_<baselineperiod>_<referenceperiod>.txt
+	
+	TCR calculated using difference method applied to observational datasets
+	and historical simulations using the labelled periods. File format is the
+	same as 6.1)
+	
+	----------------------------------------------------------------------------
+	6.3) tsensitivity
+	----------------------------------------------------------------------------
+	
+	Format for filenames:
+	histrcp85_<method>_<blending>.txt
+	
+	<method>:
+		diff = difference EBM calculation. Baseline 1861--1880, reference is
+			   a decade in each case, with labelled year (top row) being last
+			   year of decade.
+		onebox = one-box EBM calculation from 1861 until labelled end year.
+		trend = trend EBM calculation from 1970 until labelled end year.
+	
+	<blending>:
+		tas = tas-only
+		xax = blended
+	
+	In each file the header shows the end year of the calculation, and other
+	rows show calculated TCR for the model run (name in column1) and labelled
+	end year.
